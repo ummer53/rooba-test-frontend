@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Switzer';
+  src: url('/Switzer-Regular.otf') format('woff2'); /* Update with your font file paths */
+  
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,13 +25,15 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+ margin: 0;
+  padding: 0;
+  display: grid;
+  width: auto;
+  grid-gap: 0.3125rem;
+  grid-template-columns: 20rem 1fr; /* 320px wide section and the rest */
+  max-width: 90rem; /* Optional: set a maximum width for the entire layout */
+  margin: 0 auto;
+  font-family: Switzer, sans-serif;
 }
 
 @layer utilities {
@@ -31,3 +41,10 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.shadow {
+  background-color: #eee;
+  box-shadow: inset 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
