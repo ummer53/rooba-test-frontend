@@ -1,67 +1,22 @@
-import React from 'react';
-import { useState } from 'react';
+'use client';
+import React, { useContext } from 'react';
 import SectionRight from './SectionRight';
 import SectionLeft from './SectionLeft';
-
-const ProfileCompletionSteps = [
-	{
-		id: 1,
-		name: 'Complete Profile',
-		completed: false,
-		completionText: 'Complete',
-		completionSubText: 'Good  job!',
-	},
-	{
-		id: 2,
-		name: 'Step 1',
-		completed: false,
-		completionText: 'Rs 1,00,000',
-		completionSubText: '5% of total amount',
-	},
-	{
-		id: 3,
-		name: 'Step 2',
-		completed: false,
-	},
-	{
-		id: 4,
-		name: 'Step 3',
-		completed: false,
-	},
-	{
-		id: 5,
-		name: 'Step 4',
-		completed: false,
-	},
-	{
-		id: 6,
-		name: 'Step 5',
-		completed: false,
-	},
-];
+import { StepsContext } from './index';
 
 export default function ProfileBox() {
-	const [currentStep, setCurrentStep] = useState(1);
-	const [steps, setSteps] = useState(ProfileCompletionSteps);
-
+	const { steps } = useContext(StepsContext) as any;
 	return (
 		<>
-			{steps.map((step) => {
+			{steps.map((step: any) => {
 				return (
 					<div
 						key={step.id}
 						className="w-[458px] h-[156px] p-5 bg-white justify-between items-start flex flex-row gap-auto"
 					>
-						{/* chechbox 20 19*/}
 						<SectionLeft step={step} />
 
-						{/*box 383 116 */}
-
-						<div className="h-[116px] flex flex-col justify-between items-start border-black border">
-							{/* box 1 with name subtext completion text */}
-
-							{/* box 2 with date and button */}
-
+						<div className="h-[116px] flex flex-col justify-between items-start ">
 							<SectionRight step={step} />
 						</div>
 					</div>
