@@ -1,27 +1,37 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import { useSteps } from './useHooks';
+import { StepsContext } from '.';
 
 export default function SectionRight({ step }: { step: any }) {
+	const { completeStep } = useContext(StepsContext) as any;
 	return (
 		<div className="h-[116px] flex flex-col justify-between items-end">
-			<span className="text-[20px]">{formatDate(new Date())}</span>
-			<button className="w-[149px] h-[52px] border-[1px] bg-[#4375FB]  text-[14px] text-white py-[17px] px-[31px] flex justify-center items-center">
-				{step.completed ? (
-					step.id === 1 ? (
-						<DownloadButton title="Download" />
-					) : (
-						<DownloadButton title="Receipt" />
-					)
+			<span className="text-[20px]">
+				{step.completed && formatDate(new Date())}
+			</span>
+			{!step.completed && (
+				<button
+					onClick={() => {
+						completeStep(step.id);
+					}}
+					className="w-[149px] h-[52px] border-[1px] bg-[#4375FB]  text-[14px] text-white py-[17px] px-[31px] flex justify-center items-center"
+				>
+					Complete
+				</button>
+			)}
+			{step.completed &&
+				(step.id === 1 ? (
+					<DownloadButton title="Download" />
 				) : (
-					'Complete'
-				)}
-			</button>
+					<DownloadButton title="Receipt" />
+				))}
 		</div>
 	);
 }
 
 export function DownloadButton({ title }: { title: string }) {
 	return (
-		<div className="flex flex-row justify-between items-center bg-white border-[#4375FB] border-[1px] text-[#4375FB]">
+		<div className="w-[149px] h-[52px] border-[1px] border-[#4375FB] bg-white  text-[14px] text-[#4375FB] py-[17px] px-[31px] flex justify-between items-center">
 			{title}
 			<svg
 				width="12"

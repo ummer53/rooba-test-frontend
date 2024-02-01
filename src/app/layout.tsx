@@ -12,7 +12,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className="bg-zinc-300">
 				<SideBar />
-				<span className="relative bg-zinc-300 h-[64.125rem] w-[69.6875rem] m-[0.3125rem] flex flex-col gap-[0.3125rem]">
+				<span className="relative bg-zinc-300 h-full w-full m-[0.3125rem] flex flex-col gap-[0.3125rem]">
 					<TopbarOne />
 					<TopbarTwo />
 					{children}
