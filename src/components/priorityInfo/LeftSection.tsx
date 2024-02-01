@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 
 const features = [
@@ -82,7 +83,6 @@ export default function LeftSection() {
 							</div>
 						);
 					})}
-					{/*repeated four times*/}
 				</div>
 			</div>
 			<div className="self-stretch justify-between items-start inline-flex">
@@ -119,8 +119,6 @@ export default function LeftSection() {
 						</div>
 					);
 				})}
-
-				{/* </div> */}
 			</div>
 		</div>
 	);

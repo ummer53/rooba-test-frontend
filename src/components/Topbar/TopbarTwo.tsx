@@ -3,7 +3,6 @@ import React from 'react';
 export default function TopbarTwo() {
 	return (
 		<div className="absolute w-full h-[6.375rem] py-[1.875rem] px-[3.75rem] left-0 top-[7rem] bg-white justify-between items-center inline-flex">
-			{/* <div className="w-[1115px] h-[102px] px-[60px] py-[30px] bg-white justify-between items-center inline-flex"> */}
 			<div className="text-black text-[32px] font-bold font-['Switzer']">
 				Choose your new site
 			</div>

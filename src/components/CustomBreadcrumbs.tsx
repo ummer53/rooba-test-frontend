@@ -11,7 +11,7 @@ export default function CustomBreadcrumbs() {
 	return (
 		<div className="w-full h-[3.1875rem] bg-white flex flex-row items-center justify-start">
 			<Breadcrumbs
-				className="text-[0.875rem] leading-[1.155rem] text-[#7C7C7C]"
+				className="text-[0.875rem] leading-[1.155rem] text-neutral-500"
 				separator=">"
 				fullWidth
 				placeholder={undefined}

@@ -14,7 +14,6 @@ export default function Home() {
 				className="w-[62.1875rem] h-[23.1875rem] mx-auto"
 			/>
 			<div className="w-full flex flex-col bg-white mx-auto gap-[10px] mt-[5px] border-[5px] border-zinc-300">
-				{/*put pInfo and BS in same comp to give border , not to image and bradcrumb */}
 				<PriorityInfo />
 				<BottomSection />
 			</div>
